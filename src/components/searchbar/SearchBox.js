@@ -10,7 +10,6 @@ class SearchBox extends Component {
     //       })}
 
   render() {
-        console.log(this.props)
         const {onSearchChange, placeholder, className} = this.props
         return (
             <input 
