@@ -1,5 +1,5 @@
 import './App.css';
-
+import { useState } from 'react';
 import MonsterContainer from './components/monsterlist/MonsterContainer';
 import SearchBox from './components/searchbar/SearchBox';
 
@@ -7,12 +7,14 @@ import React from 'react'
 
 const App = () => {
 
+  const [searchField, setSearchfField] = useState('')
+
   const onSearchChange = (e) => {
-    const searchfield = e.target.value.toLowerCase()
-      this.setState(() => {
-        return {searchfield}
-      })}
-      
+    console.log({searchField})
+    const searchfieldString = e.target.value.toLowerCase()
+    setSearchfField(searchfieldString)
+      }
+
   return (
     <div className="App">
      
