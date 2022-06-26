@@ -10,7 +10,7 @@ const MonsterContainer = ({monsters}) => {
     <div className='card-list'>
     {monsters.map(monster => {
       return (
-        <MonsterCard monster={monster} className="card-container" />
+        <MonsterCard key={monster.id} monster={monster} className="card-container" />
       )})}
   </div>
   )
