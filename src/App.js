@@ -6,14 +6,16 @@ import SearchBox from './components/searchbar/SearchBox';
 import React from 'react'
 
 const App = () => {
-
-  const [searchField, setSearchfField] = useState('')
+  const [searchField, setSearchField] = useState('')
 
   const onSearchChange = (e) => {
-    console.log({searchField})
+    console.log(searchField)
     const searchfieldString = e.target.value.toLowerCase()
-    setSearchfField(searchfieldString)
+    setSearchField(searchfieldString)
       }
+
+  const filteredMonsters = monsters.filter(
+    monst => {return monst.name.toLowerCase().includes(searchField)})
 
   return (
     <div className="App">
@@ -24,7 +26,7 @@ const App = () => {
         placeholder="search monsters..." 
         className="search-box" />
 
-      {/* <MonsterContainer monsters={filterMonsters} /> */}
+      <MonsterContainer monsters={filteredMonsters} />
     </div>
   )
 }
@@ -61,8 +63,7 @@ export default App
 //     const { monsters, searchfield } = this.state
 //     const { onSearchChange } = this
 
-//     const filterMonsters = monsters.filter(
-//     monst => {return monst.name.toLowerCase().includes(searchfield)})
+    
 
 //   return (
 //     // <div className="App">
