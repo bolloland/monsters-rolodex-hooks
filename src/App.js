@@ -24,7 +24,9 @@ const App = () => {
       }
 
   useEffect(()=>{
-        setFilteredMonsters(monsters.filter(monst => {return monst.name.toLowerCase().includes(searchField)}))
+        setFilteredMonsters(monsters.filter(monst => {
+          return monst.name.toLowerCase().includes(searchField)
+        }))
       }, [searchField, monsters])
     
 
