@@ -10,6 +10,8 @@ const App = () => {
   const [monsters, setMonsters] = useState([])
   const [filteredMonsters, setFilteredMonsters] = useState(monsters)
 
+  console.log("rendered")
+
   useEffect(()=> {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(resp => resp.json())
@@ -45,55 +47,3 @@ const App = () => {
 }
 export default App
 
-
-// class App extends Component {
-//   constructor() {
-//     super();
-
-// //initial State
-//     this.state = {
-//       monsters: [], 
-//       searchfield: ""
-//     }
-//   }
-
-//   //access API (lifecycle methods):
-//   componentDidMount() 
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then(resp => resp.json())
-    //pull json data from API, and that data will fill the monsters array
-    .then((users) => {
-      this.setState(
-        () => {return ({monsters: users})}
-          )})
-    
-
-  
-      
-// //what to show
-//   render() {
-
-//     const { monsters, searchfield } = this.state
-//     const { onSearchChange } = this
-
-    
-
-//   return (
-//     // <div className="App">
-     
-//     //   <h3 className="app-title">Monsters Rolodex (Hooks)</h3>
-//     //     <SearchBox onSearchChange={onSearchChange} placeholder="search monsters..." className="search-box" />
-//     //     <MonsterContainer monsters={filterMonsters} />
-
-//     //  {/* {filterMonsters.map((monst) => {
-//     //       return (
-//     //         <div key={monst.id}>
-//     //           <h1>{monst.name} from {monst.address.city}</h1>
-//     //         </div>)
-//     //     })} */}
-//     // </div>
-//   );
-// }
-// }
-
-// export default App;
